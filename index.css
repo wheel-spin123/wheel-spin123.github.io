@@ -1,0 +1,17 @@
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a202c;
+    color: #cbd5e0;
+}
+
+.dark-mode .container {
+    border-color: #4a5568;
+}
+
+/* Larger Canvas */
+#wheel {
+    width: 100%;
+    /* Adjust the height as needed */
+    background-color: #1a202c;
+    /* Match the background color */
+}

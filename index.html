@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Wheel of Names</title>
+
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="./index.css" rel="stylesheet">
+
+</head>
+
+<body class="dark-mode bg-gray-800 text-gray-300">
+
+    <!-- Header -->
+    <header class="bg-gray-800 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-white">Random Wheel of Names</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto p-8">
+
+        <canvas id="wheel" width="1600" height="800" class="bg-gray-900"></canvas>
+
+        <ul id="names" class="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400"></ul>
+        
+        <div>
+            <label for="add-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Add name</label>
+            <input type="text" id="add-name" class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" required />
+            <button type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" onclick="addName()">Add</button>
+        </div>
+        <button type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" onclick="spin()">Spin</button>
+
+        <div class="fixed inset-0 z-50 hidden overflow-y-auto">
+            <div class="flex items-center justify-center min-h-screen">
+                <div class="absolute inset-0 bg-gray-500 bg-opacity-75"></div>
+                <div class="bg-gray-800 dark:bg-gray-700 p-8 rounded-lg z-50">
+                    <p id="winner" class="text-gray-300 mb-4"></p>
+                    <button type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5" onclick="closeModal()">Close</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
